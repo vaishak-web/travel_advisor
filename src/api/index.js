@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
+// const URL = "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary";
 
 // const options = {
 //   params: {
@@ -26,9 +26,9 @@ const URL = "https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary"
 //     }
 // }
 
-export const getPlacesData = async(sw, ne) => {
+export const getPlacesData = async(type, sw, ne) => {
     try{
-        const {data: {data}} = await axios.get(URL, {
+        const {data: {data}} = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`, {
             params: {
               bl_latitude: sw.lat,
               tr_latitude: ne.lat,
@@ -36,7 +36,13 @@ export const getPlacesData = async(sw, ne) => {
               tr_longitude: ne.lng,
             },
             headers: {
-              'X-RapidAPI-Key': 'da0d128adbmshc4f514550d870c4p1b9ef9jsne3096fc4e9aa',
+              // vaishak.web
+              // 'X-RapidAPI-Key': 'da0d128adbmshc4f514550d870c4p1b9ef9jsne3096fc4e9aa',
+              // 'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
+
+
+              // vaishaknair9
+              'X-RapidAPI-Key': 'aaa26c5520mshe528913cbbb3c79p138dddjsnd86622c3baa7',
               'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
             }
           });
