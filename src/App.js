@@ -30,23 +30,23 @@ const App = () => {
 
   useEffect(() => {
     console.log(coordinates, bounds);
-    // if(bounds){
-    // getPlacesData()
-    setIsLoading(true);
-    getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
-      console.log(data);
-      setPlaces(data);
-      setFiletredPlaces([]);
-      setIsLoading(false);
-    });
-    // }
+    if (bounds.sw && bounds.ne) {
+      // getPlacesData()
+      setIsLoading(true);
+      getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
+        console.log(data);
+        setPlaces(data.filter((place) => place.name && place.num_reviews > 0));
+        setFiletredPlaces([]);
+        setIsLoading(false);
+      });
+    }
     // getPlacesData(bounds.sw, bounds.ne)
-  }, [type, coordinates, bounds]);
+  }, [type, bounds]);
 
   return (
     <>
       <CssBaseline />
-      <Header />
+      <Header setCoordinates={setCoordinates} />
       <Grid container spacing={3} style={{ width: "100%" }}>
         <Grid item xs={12} md={4}>
           <List

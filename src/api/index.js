@@ -42,7 +42,7 @@ export const getPlacesData = async(type, sw, ne) => {
 
 
               // vaishaknair9
-              'X-RapidAPI-Key': 'aaa26c5520mshe528913cbbb3c79p138dddjsnd86622c3baa7',
+              'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_TRAVEL_API_KEY,
               'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
             }
           });
