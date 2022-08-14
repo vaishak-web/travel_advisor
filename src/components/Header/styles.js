@@ -20,6 +20,15 @@ export default makeStyles((theme) => ({
   searchIcon: {
     padding: theme.spacing(0, 2), height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
   },
+  MopedIcon: {
+    padding: theme.spacing(0, 2), height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
+  },
+  EastIcon: {
+    padding: theme.spacing(0, 2), height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
+  },
+  FmdGoodIcon: {
+    padding: theme.spacing(0, 2), height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
+  },
   inputRoot: {
     color: 'inherit',
   },
